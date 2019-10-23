@@ -9,6 +9,9 @@ class User < ApplicationRecord
   validates :password, confirmation: true, presence: true
   validates :username, presence: true, uniqueness: { case_sensitive: true }
 
+  has_many :wall_posts, class_name: 'Post', foreign_key: :postee_id
+  has_many :posts, foreign_key: :poster_id
+
   def self.authenticate(username, password)
     user = find_by_username(username)
     password_hash = BCrypt::Engine.hash_secret(password, user.password_salt)
