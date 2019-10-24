@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.integer :poster_id
       t.integer :postee_id
       t.datetime :posted_at
+      t.boolean :poster_revealed
       t.timestamps
     end
 

@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_10_23_172230) do
     t.integer "poster_id"
     t.integer "postee_id"
     t.datetime "posted_at"
+    t.boolean "poster_revealed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["posted_at"], name: "index_posts_on_posted_at"
