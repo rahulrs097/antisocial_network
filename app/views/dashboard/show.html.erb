@@ -1,0 +1,9 @@
+<div class="dashboard-header">
+  <h2> DASHBOARD FOR <%= dashboard_username %> </h2>
+</div>
+
+<div style="width:60%">
+  <% dashboard_posts.each do |post| %>
+    <%= render partial: 'dashboard/post', locals: {post: post} %>
+  <% end %>
+</div>
